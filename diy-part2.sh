@@ -18,3 +18,6 @@
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+# 替换红米 AX6000 为大分区布局 (112M)
+sed -i 's/<0x5400000 0x2200000>/<0x5400000 0x6600000>/g' target/linux/mediatek/dts/mt7986a-xiaomi-redmi-router-ax6000.dts
+sed -i 's/35840/104448/g' target/linux/mediatek/image/filogic.mk
